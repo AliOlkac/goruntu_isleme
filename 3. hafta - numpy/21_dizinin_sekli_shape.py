@@ -10,3 +10,5 @@ print(b.shape)
 print(c.shape)
 print(d.shape)
 
+
+

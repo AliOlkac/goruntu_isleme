@@ -17,7 +17,7 @@ for i in range(8):
     for j in range(8):
         # Rasgele bir kare seç
         x = random.randint(0, manzara.shape[0] - 64)
-        y = random.randint(0, manzara.shape[1] - 64)
+        y = random.randint(0, manzara.shape[1] - 64)a
 
         if (i + j) % 2 == 0:
             top_left = (i * 64, j * 64)

@@ -1,17 +1,21 @@
-"""
-renk paleti oluşturun
-"""
-
 import cv2 as cv
 import numpy as np
 
-dizi = np.asarray(range(0, 196608)).reshape((256, 256, 3)).astype('uint8')
+# Create an empty image
+dizi = np.zeros((256, 256, 3), dtype='uint8')
 
+# Fill the left third with a red gradient
 for i in range(256):
-    for s in range(256):
-        for d in range(256):
-            dizi[i, s] = [i, s, d]
+    dizi[i, :85, 0] = 255 - i  # Red channel
 
-cv.imshow("", dizi)
-cv.waitKey()
-print(dizi)
+# Fill the middle third with a green gradient
+for i in range(256):
+    dizi[i, 85:170, 1] = 255 - i  # Green channel
+
+# Fill the right third with a blue gradient
+for i in range(256):
+    dizi[i, 170:, 2] = 255 - i  # Blue channel
+
+cv.imshow("Gradient Image", dizi)
+cv.waitKey(0)
+cv.destroyAllWindows()
